@@ -79,5 +79,10 @@ function change_attribute(apply_class){
     }
 }
 
-
-
+//demo6.html
+function del_attribute(){
+    let container_ref = document.getElementsByTagName("h1")[0]
+    container_ref.removeAttribute("class");
+    container_ref.removeAttribute("id");
+    alert("attribute deleted")
+}
