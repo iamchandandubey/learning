@@ -1,0 +1,63 @@
+<script src="assets/js/react.development.js"></script>
+<script src="assets/js/react-dom.development.js"></script>
+<script src="assets/js/babel.min.js"></script>
+
+<!-- Selecter to render html content -->
+<div id="root"></div>
+
+<script type="text/babel">
+    //Create Functional Component
+    function Subtraction_Component(){
+        
+        //Creating Empty Refrence
+        let n1_ref = React.useRef()
+        let n2_ref = React.useRef()
+        let result_ref = React.useRef()
+
+        function sub(){
+            // alert("Click")
+            let n1 = parseInt(n1_ref.current.value)
+            let n2 = parseInt(n2_ref.current.value)
+            let calculation;
+
+            if(n1 < n2){
+                //alert("N1 is less then N2")
+                calculation = n2 - n1
+            }
+
+            if(n1 > n2){
+                //alert("N1 is greater then N2")
+                calculation = n1 - n2
+            }
+
+            if(n1 < 0 || n2 < 0) {
+                alert("Negative numbers are not allowed!!")
+            }
+
+            //Putting result inside result_ref
+            result_ref.current.innerHTML = calculation
+            
+        }
+
+        return <div>
+            <h2>Subtraction</h2>
+            <p><input type="text" ref={n1_ref}/></p>
+            <p><input type="text" ref={n2_ref}/></p>
+            <p><button onClick={sub}>Subtraction</button></p>
+            <h2>Result <span ref={result_ref}></span></h2>
+            </div>
+    }
+
+    function App(){
+        return <><Subtraction_Component/></>
+    }
+
+    //Container Refrence
+    let container_ref = document.getElementById("root")
+
+    //Crearting space inside DOM
+    let root = ReactDOM.createRoot(container_ref)
+
+    //Print Component inside DOM
+    root.render(<App/>)
+</script>

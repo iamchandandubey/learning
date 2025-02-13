@@ -86,3 +86,53 @@ function del_attribute(){
     container_ref.removeAttribute("id");
     alert("attribute deleted")
 }
+
+
+//demo7.html
+function get_attribute_value(){
+  
+   let container_ref = document.getElementsByTagName("h1")[0]
+    attribute = container_ref.getAttribute('id')
+    //Get Attribute
+    alert(attribute)
+
+    //Set Different Attribute Value
+    container_ref.setAttribute("id", "My_New_ID_Attribute");
+    let new_attribute = container_ref.getAttribute('id')
+
+    alert(new_attribute)
+}
+
+//dom8.html
+function add_element(){
+    let container_ref = document.getElementById("demo")
+
+    //Create HTML
+    let new_heading = document.createElement("h2")
+    new_heading.innerHTML = "Welcome to Brand Wave Studio"
+
+    new_heading.setAttribute("class","my_class");
+    container_ref.append(new_heading)
+    //container_ref.appendChild(new_heading)
+
+
+    //To show in multiple place
+    // container_ref.appendChild(new_heading.cloneNode(true))
+    // document.body.appendChild(new_heading.cloneNode(true));
+}
+
+function delete_element(){
+    container_ref = document.getElementsByClassName("my_class")[0];
+    container_ref.remove();
+}
+
+//demo9.html
+function change_attribute(){
+    let container_ref = document.getElementById("demo")
+    container_ref.src = "../assets/images/sundar.jpg";
+
+    container_ref.style.width = "400px"
+}
+
+
+

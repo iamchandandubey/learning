@@ -1,0 +1,27 @@
+
+<script src="assets/js/react.development.js"></script>
+<script src="assets/js/react-dom.development.js"></script>
+<script src="assets/js/babel.min.js"></script>
+
+<div id="root"></div>
+
+<script type="text/babel">
+    //Create Component
+    function Details(params){
+        return <div>
+            <h1>Hello, This is {params.user_name}. I am from {params.company_name}. </h1>
+        </div>
+    }
+
+    function App(){
+        return <>
+            <Details user_name="Sundar" company_name="Google"/>
+            <Details user_name="Chandan" company_name="Brand Wave Studio"/> 
+        </>
+    }
+
+    //Container Ref
+    let conteiner_ref =  document.getElementById("root")
+    let root = ReactDOM.createRoot(conteiner_ref)
+    root.render(<App/>)
+</script>

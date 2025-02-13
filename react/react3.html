@@ -1,0 +1,28 @@
+<script src="assets/js/react.development.js"></script>
+<script src="assets/js/react-dom.development.js"></script>
+<script src="assets/js/babel.min.js"></script>
+
+<h1>Printing Same Heading Multiple Time</h1>
+<div id="root"></div>
+
+<script type="text/babel">
+    // Here we write same code multiple time which is not good practice what if I change Brand Wave Studio to Instageam? That time we have to update in 5 places which is not good programming practice.
+    
+    function App(){
+        return <>
+            <h1>Welcome to Brand Wave Studio</h1>
+            <h1>Welcome to Brand Wave Studio</h1>
+            <h1>Welcome to Brand Wave Studio</h1>
+            <h1>Welcome to Brand Wave Studio</h1>
+            <h1>Welcome to Brand Wave Studio</h1>
+        </>
+    }
+
+    //Container Ref
+    let container = document.getElementById("root");
+
+    //Create space inside the body 
+    let root = ReactDOM.createRoot(container);
+
+    root.render(<App/>);
+</script>

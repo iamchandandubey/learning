@@ -1,0 +1,52 @@
+<script src="assets/js/react.development.js"></script>
+<script src="assets/js/react-dom.development.js"></script>
+<script src="assets/js/babel.min.js"></script>
+
+<div id="root"></div>
+
+<script type="text/babel">
+    
+    function Left_Aside(){
+        return <h1>Left Ads</h1>
+    }
+
+    function Right_Aside(){
+        return <h1>Right Ads</h1>
+    }
+    function Body_Content(){
+        return <>
+            <Left_Aside/>
+            <h1>Main Content</h1>
+            <Right_Aside/>
+        </>
+        
+    }
+
+    function Header(){
+        return <h1>Header</h1>
+    }
+
+    function Footer(){
+        return <h1>Footer</h1>
+    }
+
+
+    function Main(){
+        return <>
+            <Header/>
+            <Body_Content/>
+            <Footer/>
+        </>
+    }
+
+   function App(){
+        return <Main/>
+   }
+
+   //Container Ref
+   let container_ref = document.getElementById("root")
+
+   //Space to print inside the body
+   let root = ReactDOM.createRoot(container_ref)
+   root.render(<App/>)
+</script>

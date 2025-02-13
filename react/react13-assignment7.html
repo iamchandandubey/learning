@@ -1,0 +1,59 @@
+<!-- Required CDN for React Application -->
+<script src="assets/js/react.development.js"></script>
+<script src="assets/js/react-dom.development.js"></script>
+<script src="assets/js/babel.min.js"></script>
+
+<!-- Container for HTML DOM Elements -->
+ <div id="root"></div>
+
+
+ <script type="text/babel">
+
+    //Create Class Component
+    const Calculation = ()=>{
+        //Create Empty Refrence Elements
+        const num1_ref = React.useRef()
+        const num2_ref = React.useRef()
+        const result_ref = React.useRef()
+
+        function addition(){
+            // alert("Button Click")
+            const sum = parseInt(num1_ref.current.value) + parseInt(num2_ref.current.value)
+            result_ref.current.innerHTML = sum
+
+            //Set color based on result
+            let clr = "green"
+            //alert(sum)
+            if(sum < 50){
+                clr = "red";
+            }
+
+            //Apply CSS on result refrence
+            result_ref.current.style.color = clr
+        }
+
+        return <>
+            <h1>Calculation</h1>
+            <p>Number 1: <input type="text" ref={num1_ref}/></p>
+            <p>Number 2: <input type="text" ref={num2_ref}/></p>
+            <p><button onClick={addition}>Calculate Now</button></p>
+            <h3>Result : <span ref={result_ref}></span></h3>
+        </>
+    }
+
+
+    const App = ()=>{
+        return <>
+            <Calculation/>
+        </>
+    }
+
+    //Container Refrence
+    const container_ref = document.getElementById("root")
+    
+    //Creating Space inside DOM
+    const root = ReactDOM.createRoot(container_ref)
+
+    //Printing Component
+    root.render(<App/>)
+ </script>

@@ -1,0 +1,103 @@
+<link rel="stylesheet" href="assets/css/bootstrap.min.css">
+<link rel="stylesheet" href="assets/css/mystyle.css">
+
+<script src="assets/js/react.development.js"></script>
+<script src="assets/js/react-dom.development.js"></script>
+<script src="assets/js/babel.min.js"></script>
+
+<div id="root"></div>
+
+<script type="text/babel">
+    
+    function Left_Aside(){
+        return <h3 className="text-primary text-center">Left Ads</h3>
+    }
+
+    function Right_Aside(){
+        return <h3 className="text-primary text-center">Right Ads</h3>
+    }
+    function Body_Content(){
+        return <>
+            <div className="container">
+                <div className="row">
+                    <aside className="col-md-3 bg-light">
+                        <Left_Aside/>
+                    </aside>
+                    <main className="col-md-6">
+                        <h1>Brand Wave Studio</h1>
+                        <h3>Best SEO Services in Jamshedpur, Ranchi, Jharkhand</h3>
+                        <p>If we are searching for something like the Best SEO services in Jamshedpur on Google or some other search engines, mostly we will visit those websites which are positioned higher on the internet search. Basically we search the first two pages of the search engine. In this way the high volume of quality traffic will be in those sites which are present in 1st or 2nd page of the Google search. Business also understands the importance of Search Engine Optimization. So, it is essential to apply the search engine optimization service for the best result. Brand Wave Studio is the Best SEO Company in Jamshedpur always ready to help the customers with their web services.</p>
+                        <hr/>
+                        <h3>Top SEO Company in Jamshedpur</h3>
+                        <p>Search Engine Optimization is a procedure that generates leads naturally. The best answer for both brand promotion and lead generation can be performed by the proper use of SEO techniques. Brand Wave Studio is the top SEO company in Jamshedpur that practices the best SEO strategies for the client. We guarantee more quality leads for your business. Brand Wave Studio is one of the professional SEO agencies in Jamshedpur, provides you the benefits of SEO results for a long term. Our company always provides customized service according to the work and profile of the client. Our team goes through a deep research then starts the project. We always deliver the project on time as we mentioned in the proposal.</p>
+                        <hr/>
+                        <h3>Expert SEO agency in Jamshedpur</h3>
+                        <p>We are the leading SEO agency in Jamshedpur and have an expert SEO team with years of experience. Our experts know how to deal with different types of sites, and optimize accordingly. We apply on page, off page and technical SEO techniques for the best result. We have a large client base from different cities like Ranchi, Dhanbad, Bokaro, Deoghar, Hazaribagh in Jharkhand. We have a range of services, and we always try to satisfy our clients with our service at a cost-effective price.</p>
+                    </main>
+                    <aside className="col-md-3 bg-light">
+                        <Right_Aside/>
+                    </aside>
+                </div>
+            </div>
+        </>
+        
+    }
+
+    function Header(){
+        return <>
+                <header>
+                    <h1 className="bg-primary py-4 text-center fw-bold text-light m-0">Welcome to Brand Wave Studio</h1>
+                </header>
+            </>
+    }
+
+    function Nav(){
+        return <nav className="navbar navbar-expand-lg bg-dark sticky-top" data-bs-theme="dark">
+                <div className="container">
+                    <a className="navbar-brand" href="#">Brand Wave Studio</a>
+                    <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div className="collapse navbar-collapse" id="navbarNav">
+                        <ul className="navbar-nav">
+                            <li className="nav-item">
+                            <a className="nav-link text-light" aria-current="page" href="#">Home</a>
+                            </li>
+                            <li className="nav-item">
+                            <a class="nav-link text-light" href="#">Features</a>
+                            </li>
+                            <li className="nav-item">
+                            <a class="nav-link text-light" href="#">Pricing</a>
+                            </li>
+                            
+                        </ul>
+                    </div>
+                </div>
+                </nav>
+    }
+
+    function Footer(){
+        return <footer className="bg-primary fw-bold text-center text-light position-fixed bottom-0 start-0 end-0 w-100">@all right reserved 2025.</footer>
+    }
+
+
+    function Main(){
+        return <>
+            <Header/>
+            <Nav/>
+            <Body_Content/>
+            <Footer/>
+        </>
+    }
+
+   function App(){
+        return <Main/>
+   }
+
+   //Container Ref
+   let container_ref = document.getElementById("root")
+
+   //Space to print inside the body
+   let root = ReactDOM.createRoot(container_ref)
+   root.render(<App/>)
+</script>

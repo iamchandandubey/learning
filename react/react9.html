@@ -1,0 +1,27 @@
+
+<script src="assets/js/react.development.js"></script>
+<script src="assets/js/react-dom.development.js"></script>
+<script src="assets/js/babel.min.js"></script>
+
+<div id="root"></div>
+
+<script type="text/babel">
+    //Create Component
+    function Details(){
+        return <div>
+            <h1>Hello, This is Sundar. I am from Google. </h1>
+            <h1>Hello, This is Chandan. I am from Brand Wave Studio.</h1>
+        </div>
+    }
+
+    function App(){
+        return <>
+            <Details/>
+        </>
+    }
+
+    //Container Ref
+    let conteiner_ref =  document.getElementById("root")
+    let root = ReactDOM.createRoot(conteiner_ref)
+    root.render(<App/>)
+</script>

@@ -1,0 +1,50 @@
+<style>
+    .box{
+        background-color: red;
+        width: 100px;
+        height: 100px;
+        line-height: 100px;
+        text-align: center;
+        font-size: 86px;
+        color: yellow;
+        border: 15px groove #780707;
+        display: inline-block;
+    }
+</style>
+
+<!-- Required CDN for the React Project -->
+<script src="assets/js/react.development.js"></script>
+<script src="assets/js/react-dom.development.js"></script>
+<script src="assets/js/babel.min.js"></script>
+
+<!-- Container -->
+<div id="root"></div>
+
+<script type="text/babel">
+    //Passing data to the component in object
+    function Box(params){
+        return <div className="box">{params.no}</div>;
+    }
+
+    function App(){
+        return <>
+            <div>
+                <Box no="1"/><Box no="2"/>
+            </div>
+            <div>
+                <Box no="3"/><Box no="4"/>
+            </div>
+            
+        </>
+    }
+
+    //Container Refrenece
+    let container_ref = document.getElementById("root")
+
+    //Creating space
+    let root = ReactDOM.createRoot(container_ref)
+
+    //Printing Component in DOM
+    root.render(<App/>)
+
+</script>

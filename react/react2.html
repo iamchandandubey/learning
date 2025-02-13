@@ -1,0 +1,24 @@
+<script src="assets/js/react.development.js"></script>
+<script src="assets/js/react-dom.development.js"></script>
+<script src="assets/js/babel.min.js"></script>
+
+<div id="root"></div>
+
+<script type="text/babel">
+    //Functional Component
+    function App(){
+        // Wrapped JSX - Returning Multiple Elements
+        return <div>
+                    <h1>Welcome to React</h1>
+                    <p>React is a Javascript Frontend Library.</p>
+                </div>
+    }
+
+    //container ref
+    let container_ref = document.getElementById("root");
+
+    //I want some space inside my body tag to show my content
+    let root = ReactDOM.createRoot(container_ref)
+
+    root.render(<App/>)
+</script>

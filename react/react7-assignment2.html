@@ -1,0 +1,36 @@
+<style>
+    .box{
+        background-color: red;
+        width: 100px;
+        height: 100px;
+        display: inline-block;
+        border: 1px solid white;
+    }
+</style>
+
+<script src="assets/js/react.development.js"></script>
+<script src="assets/js/react-dom.development.js"></script>
+<script src="assets/js/babel.min.js"></script>
+
+<div id="root"></div>
+
+<script type="text/babel">
+    //Creating Componnet
+    function Box(){
+        return <div className="box"></div>
+    }
+    function App(){
+        return <>
+            <div><Box/><Box/></div>
+            <div><Box/><Box/></div>
+        </>
+    }
+
+
+    //conteiner ref
+    let container_ref = document.getElementById("root");
+
+    //Creating space inside DOM
+    let root = ReactDOM.createRoot(container_ref);
+    root.render(<App/>)
+</script>

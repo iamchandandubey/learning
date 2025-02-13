@@ -1,0 +1,29 @@
+<script src="assets/js/react.development.js"></script>
+<script src="assets/js/react-dom.development.js"></script>
+<script src="assets/js/babel.min.js"></script>
+
+
+<div id="root"></div>
+
+<script type="text/babel">
+    // Here we write same code multiple time which is not good practice what if I change Brand Wave Studio to Instageam? That time we have to update in 5 places which is not good programming practice.
+    function BrandName(){
+        return <h1>Welcome to Brand Wave Studio</h1>
+    }
+    function App(){
+        return <>
+           <BrandName/>
+           <BrandName/>
+           <BrandName/>
+           <BrandName/>
+        </>
+    }
+
+    //Container Ref
+    let container = document.getElementById("root");
+
+    //Create space inside the body 
+    let root = ReactDOM.createRoot(container);
+
+    root.render(<App/>);
+</script>

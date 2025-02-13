@@ -1,0 +1,49 @@
+<script src="assets/js/react.development.js"></script>
+<script src="assets/js/react-dom.development.js"></script>
+<script src="assets/js/babel.min.js"></script>
+
+<div id="root"></div>
+
+<script type="text/babel">
+    //Create Functional Component
+    function App(){
+
+        let n1_Ref = React.useRef()
+        let n2_Ref = React.useRef()
+        let sumRef = React.useRef()
+
+        //Function Inside Functional Component
+        function addition(){
+            // alert("Button Click")
+
+            //console.log(n1_Ref);
+            //console.log(n1_Ref.current);
+            //console.log(n1_Ref.current.value);
+            
+            let sum = parseInt(n1_Ref.current.value) + parseInt(n2_Ref.current.value)
+            //alert(sum)
+            sumRef.current.innerHTML = sum
+        }
+
+        return <div>
+                <h2>Adding Numbers</h2>
+                <p><input type="text" ref={n1_Ref}/></p>
+                <p><input type="text" ref={n2_Ref}/></p>
+                <p><button onClick={addition}>Add Now</button></p>
+                
+                <div>Result = <span ref={sumRef}></span></div>
+            </div>
+    }
+
+    
+
+    // Container Ref
+    let container_ref = document.getElementById("root")
+
+    //Create space inside DOM
+    let root = ReactDOM.createRoot(container_ref)
+
+    //Print in DOM
+    root.render(<App/>)
+
+</script>
